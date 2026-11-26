@@ -13,6 +13,8 @@ public class InvocationController {
         this.chatService = chatService;
     }
 
+    
+
     @PostMapping(value = "invocations", produces = MediaType.TEXT_PLAIN_VALUE)
     public Flux<String> handleInvocation(
             @RequestBody InvocationRequest request,
