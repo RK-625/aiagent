@@ -13,7 +13,10 @@ public class InvocationController {
         this.chatService = chatService;
     }
 
-    
+    @PostMapping(value = "load", consumes = MediaType.TEXT_PLAIN_VALUE)
+    public void loadDocument(@RequestBody String content) {
+        chatService.loadDocument(content);
+    }
 
     @PostMapping(value = "invocations", produces = MediaType.TEXT_PLAIN_VALUE)
     public Flux<String> handleInvocation(
